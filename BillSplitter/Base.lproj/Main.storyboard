@@ -30,12 +30,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-5T-pik">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-5T-pik">
                                 <rect key="frame" x="14" y="58" width="347" height="31"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okG-iB-du6">
                                 <rect key="frame" x="164" y="96" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MiV-rk-8Iz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-c3-aFU">
                                 <rect key="frame" x="15.5" y="134" width="343" height="21"/>
@@ -58,6 +61,11 @@
                             <constraint firstItem="okG-iB-du6" firstAttribute="top" secondItem="qV6-5T-pik" secondAttribute="bottom" constant="8" id="yWF-3v-s8E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountEachPersonPay" destination="jcR-c3-aFU" id="Akw-9M-7gU"/>
+                        <outlet property="getTotalAmount" destination="Alp-yl-P8U" id="0o7-cJ-NXN"/>
+                        <outlet property="numberOfPeopleSplitBill" destination="qV6-5T-pik" id="ikL-QD-kXR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

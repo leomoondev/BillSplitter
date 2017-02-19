@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *getTotalAmount;
+@property (strong, nonatomic) IBOutlet UISlider *numberOfPeopleSplitBill;
+@property (strong, nonatomic) IBOutlet UILabel *amountEachPersonPay;
+- (IBAction)calculateSplitAmount:(id)sender;
 
 @end
 
@@ -26,4 +30,6 @@
 }
 
 
+- (IBAction)calculateSplitAmount:(id)sender {
+}
 @end
