@@ -10,12 +10,13 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *totalAmount;
-
 @property (strong, nonatomic) IBOutlet UILabel *showSliderValue;
+@property (strong, nonatomic) IBOutlet UILabel *amountEachPersonPay;
 
 @property (strong, nonatomic) IBOutlet UITextField *getTotalAmount;
+
 @property (strong, nonatomic) IBOutlet UISlider *numberOfPeopleSplitBill;
-@property (strong, nonatomic) IBOutlet UILabel *amountEachPersonPay;
+
 - (IBAction)calculateSplitAmount:(id)sender;
 
 @end

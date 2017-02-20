@@ -35,7 +35,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-5T-pik">
                                 <rect key="frame" x="14" y="102" width="347" height="31"/>
@@ -81,6 +81,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-bS-fpP">
+                                <rect key="frame" x="212" y="25" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -89,10 +95,12 @@
                             <constraint firstAttribute="leadingMargin" secondItem="2Wl-vZ-FxV" secondAttribute="leading" id="8iR-Zj-FUV"/>
                             <constraint firstItem="tog-wD-Q3I" firstAttribute="leading" secondItem="yCC-Tz-rRS" secondAttribute="trailing" constant="47" id="AOo-6W-2xe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tog-wD-Q3I" secondAttribute="trailing" constant="43" id="AwQ-Da-MIi"/>
+                            <constraint firstItem="Alp-yl-P8U" firstAttribute="leading" secondItem="5oh-bS-fpP" secondAttribute="trailing" constant="8" id="EMB-yk-MLt"/>
                             <constraint firstItem="2Wl-vZ-FxV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="H5k-ie-x4r"/>
                             <constraint firstItem="tog-wD-Q3I" firstAttribute="top" secondItem="Alp-yl-P8U" secondAttribute="bottom" constant="13" id="MCZ-qA-xs6"/>
                             <constraint firstItem="jcR-c3-aFU" firstAttribute="top" secondItem="okG-iB-du6" secondAttribute="bottom" constant="8" id="N0r-iW-Gzp"/>
                             <constraint firstAttribute="leadingMargin" secondItem="yCC-Tz-rRS" secondAttribute="leading" id="P0n-On-lNO"/>
+                            <constraint firstItem="5oh-bS-fpP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Z6c-OR-6KF"/>
                             <constraint firstItem="Alp-yl-P8U" firstAttribute="centerY" secondItem="2Wl-vZ-FxV" secondAttribute="centerY" id="e62-b3-zgG"/>
                             <constraint firstItem="okG-iB-du6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ftE-hu-DSn"/>
                             <constraint firstItem="yCC-Tz-rRS" firstAttribute="top" secondItem="2Wl-vZ-FxV" secondAttribute="bottom" constant="18" id="fzz-U0-qI2"/>
