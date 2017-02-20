@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,27 +22,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wl-vZ-FxV">
+                                <rect key="frame" x="16" y="25" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Alp-yl-P8U">
-                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <rect key="frame" x="231" y="21" width="128" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="rRN-Fa-Ttz"/>
+                                    <constraint firstAttribute="width" constant="128" id="Fam-Wf-vFJ"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-5T-pik">
-                                <rect key="frame" x="14" y="58" width="347" height="31"/>
+                                <rect key="frame" x="14" y="102" width="347" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Seb-w2-XGE"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cVk-o1-8d8"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okG-iB-du6">
-                                <rect key="frame" x="164" y="96" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="111" y="140" width="153" height="30"/>
+                                <state key="normal" title="Caculate Split Amount"/>
                                 <connections>
                                     <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MiV-rk-8Iz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-c3-aFU">
-                                <rect key="frame" x="15.5" y="134" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each Person needs to pay $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-c3-aFU">
+                                <rect key="frame" x="10" y="178" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tog-wD-Q3I">
+                                <rect key="frame" x="274" y="64" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Mjf-sK-9sK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Number of People :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-Tz-rRS">
+                                <rect key="frame" x="16" y="64" width="211" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDB-rf-y3P">
+                                <rect key="frame" x="231" y="178" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,22 +84,29 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qV6-5T-pik" firstAttribute="top" secondItem="Alp-yl-P8U" secondAttribute="bottom" constant="8" id="29R-aa-3XK"/>
-                            <constraint firstItem="Alp-yl-P8U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GSa-ZP-3mU"/>
-                            <constraint firstItem="Alp-yl-P8U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Nb9-S7-hxa"/>
+                            <constraint firstItem="qV6-5T-pik" firstAttribute="top" secondItem="yCC-Tz-rRS" secondAttribute="bottom" constant="17" id="39A-1k-3V2"/>
+                            <constraint firstItem="okG-iB-du6" firstAttribute="top" secondItem="qV6-5T-pik" secondAttribute="bottom" constant="8" id="5nd-DD-IVq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2Wl-vZ-FxV" secondAttribute="leading" id="8iR-Zj-FUV"/>
+                            <constraint firstItem="tog-wD-Q3I" firstAttribute="leading" secondItem="yCC-Tz-rRS" secondAttribute="trailing" constant="47" id="AOo-6W-2xe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tog-wD-Q3I" secondAttribute="trailing" constant="43" id="AwQ-Da-MIi"/>
+                            <constraint firstItem="2Wl-vZ-FxV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="H5k-ie-x4r"/>
+                            <constraint firstItem="tog-wD-Q3I" firstAttribute="top" secondItem="Alp-yl-P8U" secondAttribute="bottom" constant="13" id="MCZ-qA-xs6"/>
+                            <constraint firstItem="jcR-c3-aFU" firstAttribute="top" secondItem="okG-iB-du6" secondAttribute="bottom" constant="8" id="N0r-iW-Gzp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yCC-Tz-rRS" secondAttribute="leading" id="P0n-On-lNO"/>
+                            <constraint firstItem="Alp-yl-P8U" firstAttribute="centerY" secondItem="2Wl-vZ-FxV" secondAttribute="centerY" id="e62-b3-zgG"/>
                             <constraint firstItem="okG-iB-du6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ftE-hu-DSn"/>
-                            <constraint firstItem="jcR-c3-aFU" firstAttribute="width" secondItem="qV6-5T-pik" secondAttribute="width" id="oNH-Rv-4lr"/>
+                            <constraint firstItem="yCC-Tz-rRS" firstAttribute="top" secondItem="2Wl-vZ-FxV" secondAttribute="bottom" constant="18" id="fzz-U0-qI2"/>
+                            <constraint firstItem="Alp-yl-P8U" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="l1a-Tq-4HW"/>
                             <constraint firstItem="qV6-5T-pik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pm7-HO-Z5x"/>
-                            <constraint firstItem="jcR-c3-aFU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pzr-b9-d61"/>
-                            <constraint firstItem="jcR-c3-aFU" firstAttribute="top" secondItem="okG-iB-du6" secondAttribute="bottom" constant="8" id="sgq-FU-1Z0"/>
-                            <constraint firstItem="qV6-5T-pik" firstAttribute="width" secondItem="Alp-yl-P8U" secondAttribute="width" id="x4a-kd-T6V"/>
-                            <constraint firstItem="okG-iB-du6" firstAttribute="top" secondItem="qV6-5T-pik" secondAttribute="bottom" constant="8" id="yWF-3v-s8E"/>
+                            <constraint firstItem="jcR-c3-aFU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="t2F-qc-v3Y"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="amountEachPersonPay" destination="jcR-c3-aFU" id="Akw-9M-7gU"/>
                         <outlet property="getTotalAmount" destination="Alp-yl-P8U" id="0o7-cJ-NXN"/>
-                        <outlet property="numberOfPeopleSplitBill" destination="qV6-5T-pik" id="ikL-QD-kXR"/>
+                        <outlet property="numberOfPeopleSplitBill" destination="qV6-5T-pik" id="qWD-pz-zdg"/>
+                        <outlet property="showSliderValue" destination="tog-wD-Q3I" id="Voz-xS-60A"/>
+                        <outlet property="totalAmount" destination="2Wl-vZ-FxV" id="wvn-Bn-7Sb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

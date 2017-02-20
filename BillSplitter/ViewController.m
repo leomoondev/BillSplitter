@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *totalAmount;
+
+@property (strong, nonatomic) IBOutlet UILabel *showSliderValue;
+
 @property (strong, nonatomic) IBOutlet UITextField *getTotalAmount;
 @property (strong, nonatomic) IBOutlet UISlider *numberOfPeopleSplitBill;
 @property (strong, nonatomic) IBOutlet UILabel *amountEachPersonPay;
@@ -21,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self valueChanged:self.numberOfPeopleSplitBill];
+
 }
 
 
@@ -32,4 +38,16 @@
 
 - (IBAction)calculateSplitAmount:(id)sender {
 }
+
+-(IBAction)valueChanged:(UISlider*)sender {
+    
+[self.numberOfPeopleSplitBill addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    NSString *labelString = [NSString stringWithFormat:@"%.f", self.numberOfPeopleSplitBill.value];
+    [self.showSliderValue setText:labelString];
+}
+
+
+//[self.numberOfPeopleSplitBill addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+
 @end
