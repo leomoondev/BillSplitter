@@ -9,9 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *totalAmount;
 @property (strong, nonatomic) IBOutlet UILabel *showSliderValue;
-@property (strong, nonatomic) IBOutlet UILabel *amountEachPersonPay;
+@property (strong, nonatomic) IBOutlet UILabel *showAmountEachPersonNeedsToPay;
 
 @property (strong, nonatomic) IBOutlet UITextField *getTotalAmount;
 
@@ -24,10 +23,12 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     [self valueChanged:self.numberOfPeopleSplitBill];
-
+    [self calculateSplitAmount:self];
 }
 
 
@@ -38,6 +39,17 @@
 
 
 - (IBAction)calculateSplitAmount:(id)sender {
+    NSString *enteredText = [self.getTotalAmount text]; // Or textField.text
+    float userTypedAmount = [enteredText floatValue];
+
+    NSString *sliderFloatValue = [self.showSliderValue text];
+    float convertSliderValueToFloat = [sliderFloatValue floatValue];
+    
+    float storeEachPersonNeedsToPay = userTypedAmount / convertSliderValueToFloat;
+    
+    NSString *eachPersonPaymentValue = [NSString stringWithFormat:@"%.2f", storeEachPersonNeedsToPay];
+
+    [self.showAmountEachPersonNeedsToPay setText:eachPersonPaymentValue];
 }
 
 -(IBAction)valueChanged:(UISlider*)sender {
@@ -47,8 +59,5 @@
     NSString *labelString = [NSString stringWithFormat:@"%.f", self.numberOfPeopleSplitBill.value];
     [self.showSliderValue setText:labelString];
 }
-
-
-//[self.numberOfPeopleSplitBill addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
 
 @end

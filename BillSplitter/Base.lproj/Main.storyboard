@@ -110,11 +110,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="amountEachPersonPay" destination="jcR-c3-aFU" id="Akw-9M-7gU"/>
                         <outlet property="getTotalAmount" destination="Alp-yl-P8U" id="0o7-cJ-NXN"/>
                         <outlet property="numberOfPeopleSplitBill" destination="qV6-5T-pik" id="qWD-pz-zdg"/>
+                        <outlet property="showAmountEachPersonNeedsToPay" destination="fDB-rf-y3P" id="kBn-ak-Zrd"/>
                         <outlet property="showSliderValue" destination="tog-wD-Q3I" id="Voz-xS-60A"/>
-                        <outlet property="totalAmount" destination="2Wl-vZ-FxV" id="wvn-Bn-7Sb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
