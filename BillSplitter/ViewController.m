@@ -39,16 +39,32 @@
 
 
 - (IBAction)calculateSplitAmount:(id)sender {
-    NSString *enteredText = [self.getTotalAmount text]; // Or textField.text
-    float userTypedAmount = [enteredText floatValue];
+    NSString *enteredText = [self.getTotalAmount text];
 
     NSString *sliderFloatValue = [self.showSliderValue text];
-    float convertSliderValueToFloat = [sliderFloatValue floatValue];
     
-    float storeEachPersonNeedsToPay = userTypedAmount / convertSliderValueToFloat;
+    NSNumberFormatter *firstNumberFormatter = [[NSNumberFormatter alloc] init];
+    firstNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *firstNSNumber = [firstNumberFormatter numberFromString:enteredText];
+    NSDecimalNumber *firstDecNumber = [NSDecimalNumber decimalNumberWithDecimal:[firstNSNumber decimalValue]];
     
-    NSString *eachPersonPaymentValue = [NSString stringWithFormat:@"%.2f", storeEachPersonNeedsToPay];
+    NSNumberFormatter *secondNumberFormatter = [[NSNumberFormatter alloc] init];
+    secondNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *secondNSNumber = [secondNumberFormatter numberFromString:sliderFloatValue];
+    NSDecimalNumber *secondDecNumber = [NSDecimalNumber decimalNumberWithDecimal:[secondNSNumber decimalValue]];
+    
+    NSDecimalNumberHandler *roundUp = [NSDecimalNumberHandler
+                                       decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                       scale:2
+                                       raiseOnExactness:NO
+                                       raiseOnOverflow:NO
+                                       raiseOnUnderflow:NO
+                                       raiseOnDivideByZero:YES];
+    
+    NSDecimalNumber *finalOutput = [firstDecNumber decimalNumberByDividingBy:secondDecNumber withBehavior:roundUp];
 
+    NSString *eachPersonPaymentValue = [NSString stringWithFormat:@"%@", finalOutput];
+    
     [self.showAmountEachPersonNeedsToPay setText:eachPersonPaymentValue];
 }
 
